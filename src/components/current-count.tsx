@@ -1,9 +1,9 @@
 import { eq } from 'drizzle-orm';
 import { getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
-import { db } from '@/libs/DB';
-import { logger } from '@/libs/Logger';
-import { counterSchema } from '@/models/Schema';
+import { db } from '@/libs/db';
+import { logger } from '@/libs/logger';
+import { counterSchema } from '@/models/schema';
 
 export const CurrentCount = async () => {
   const t = await getTranslations('CurrentCount');

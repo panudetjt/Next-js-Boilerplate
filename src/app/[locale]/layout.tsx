@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { PostHogProvider } from '@/components/analytics/PostHogProvider';
-import { DemoBadge } from '@/components/DemoBadge';
-import { routing } from '@/libs/I18nRouting';
+import { PostHogProvider } from '@/components/analytics/post-hog-provider';
+import { DemoBadge } from '@/components/demo-badge';
+import { routing } from '@/libs/i18n-routing';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {

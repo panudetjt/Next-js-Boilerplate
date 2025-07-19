@@ -3,39 +3,47 @@ import { NextIntlClientProvider } from 'next-intl';
 import { describe, expect, it } from 'vitest';
 import { render } from 'vitest-browser-react';
 import messages from '@/locales/en.json';
-import { BaseTemplate } from './BaseTemplate';
+import { BaseTemplate } from './base-template';
 
 describe('Base template', () => {
   describe('Render method', () => {
     it('should have 3 menu items', () => {
+      // Arrange
+      const leftNavItems = (
+        <>
+          <li>link 1</li>
+          <li>link 2</li>
+          <li>link 3</li>
+        </>
+      );
+
+      // Act
       render(
         <NextIntlClientProvider locale="en" messages={messages}>
-          <BaseTemplate
-            leftNav={(
-              <>
-                <li>link 1</li>
-                <li>link 2</li>
-                <li>link 3</li>
-              </>
-            )}
-          >
+          <BaseTemplate leftNav={leftNavItems}>
             {null}
           </BaseTemplate>
         </NextIntlClientProvider>,
       );
 
+      // Assert
       const menuItemList = page.getByRole('listitem');
 
       expect(menuItemList.elements()).toHaveLength(3);
     });
 
     it('should have a link to support creativedesignsguru.com', () => {
+      // Arrange
+      const leftNavItem = <li>1</li>;
+
+      // Act
       render(
         <NextIntlClientProvider locale="en" messages={messages}>
-          <BaseTemplate leftNav={<li>1</li>}>{null}</BaseTemplate>
+          <BaseTemplate leftNav={leftNavItem}>{null}</BaseTemplate>
         </NextIntlClientProvider>,
       );
 
+      // Assert
       const copyrightSection = page.getByText(/© Copyright/);
       const copyrightLink = copyrightSection.getByRole('link');
 

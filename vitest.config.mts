@@ -7,15 +7,15 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
     coverage: {
-      include: ['src/**/*'],
-      exclude: ['src/**/*.stories.{js,jsx,ts,tsx}'],
+      include: ['src/**/*', 'scripts/**/*'],
+      exclude: ['src/**/*.stories.{js,jsx,ts,tsx}', 'scripts/**/*.test.{js,ts}'],
     },
     projects: [
       {
         extends: true,
         test: {
           name: 'unit',
-          include: ['src/**/*.test.{js,ts}'],
+          include: ['src/**/*.test.{js,ts}', 'scripts/**/*.test.{js,ts}'],
           exclude: ['src/hooks/**/*.test.ts'],
           environment: 'node',
         },

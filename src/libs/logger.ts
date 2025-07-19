@@ -1,7 +1,7 @@
 import type { AsyncSink } from '@logtape/logtape';
 import { configure, fromAsyncSink, getConsoleSink, getJsonLinesFormatter, getLogger } from '@logtape/logtape';
-import { isServer } from '@/utils/Helpers';
-import { Env } from './Env';
+import { isServer } from '@/utils/helpers';
+import { Env } from './env';
 
 const betterStackSink: AsyncSink = async (record) => {
   await fetch('https://in.logs.betterstack.com', {

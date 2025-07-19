@@ -15,35 +15,53 @@ import { expect, test } from '@playwright/test';
 test.describe('Sanity', () => {
   test.describe('Static pages', () => {
     test('should display the homepage', async ({ page, baseURL }) => {
-      await page.goto(`${baseURL}/`);
+      // Arrange
+      const homepageUrl = `${baseURL}/`;
+      const expectedHeading = 'Boilerplate Code for Your Next.js Project with Tailwind CSS';
 
+      // Act
+      await page.goto(homepageUrl);
+
+      // Assert
       await expect(
-        page.getByRole('heading', { name: 'Boilerplate Code for Your Next.js Project with Tailwind CSS' }),
+        page.getByRole('heading', { name: expectedHeading }),
       ).toBeVisible();
     });
 
     test('should navigate to the about page', async ({ page, baseURL }) => {
-      await page.goto(`${baseURL}/`);
+      // Arrange
+      const homepageUrl = `${baseURL}/`;
+      const aboutLinkName = 'About';
+      const expectedUrl = /about$/;
+      const expectedText = 'Welcome to our About page';
 
-      await page.getByRole('link', { name: 'About' }).click();
+      // Act
+      await page.goto(homepageUrl);
+      await page.getByRole('link', { name: aboutLinkName }).click();
 
-      await expect(page).toHaveURL(/about$/);
-
+      // Assert
+      await expect(page).toHaveURL(expectedUrl);
       await expect(
-        page.getByText('Welcome to our About page', { exact: false }),
+        page.getByText(expectedText, { exact: false }),
       ).toBeVisible();
     });
 
     test('should navigate to the portfolio page', async ({ page, baseURL }) => {
-      await page.goto(`${baseURL}/`);
+      // Arrange
+      const homepageUrl = `${baseURL}/`;
+      const portfolioLinkName = 'Portfolio';
+      const expectedUrl = /portfolio$/;
+      const expectedPortfolioLinksCount = 6;
 
-      await page.getByRole('link', { name: 'Portfolio' }).click();
+      // Act
+      await page.goto(homepageUrl);
+      await page.getByRole('link', { name: portfolioLinkName }).click();
 
-      await expect(page).toHaveURL(/portfolio$/);
-
+      // Assert
+      await expect(page).toHaveURL(expectedUrl);
       await expect(
         page.locator('main').getByRole('link', { name: /^Portfolio/ }),
-      ).toHaveCount(6);
+      ).toHaveCount(expectedPortfolioLinksCount);
     });
   });
 });
