@@ -7,4 +7,8 @@ export default {
   ci: {
     budget: 80, // Fail if the score is below the budget for any lighthouse category
   },
+  chrome: {
+    useSystem: false,
+    useDownloadFallback: true,
+  },
 };

@@ -117,5 +117,13 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
     ]
-  }
+  },
+  "trustedDependencies": [
+    "@clerk/shared",
+    "@parcel/watcher",
+    "@sentry/cli",
+    "@tailwindcss/oxide",
+    "core-js",
+    "oxc-resolver"
+  ]
 }
