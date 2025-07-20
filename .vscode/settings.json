@@ -2,7 +2,8 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "search.exclude": {
-    "package-lock.json": true
+    "package-lock.json": true,
+    "bun.lock": true
   },
 
   // TypeScript
@@ -16,9 +17,9 @@
     // Not used in the project and conflicts with `use()` from React
     "chai",
     // Use Zod v4 instead of v3
-    "zod/v3",
+    "zod/v3"
     // Sentry is imported with `import *`
-    "@sentry/nextjs"
+    // "@sentry/nextjs"
   ],
   "typescript.preferences.preferTypeOnlyAutoImports": true, // Prefer type-only imports
 

@@ -6,14 +6,10 @@ export const Sponsors = () => (
     <tbody>
       <tr className="h-56">
         <td className="border-2 border-gray-300 p-3">
-          <a
-            href="https://clerk.com?utm_source=github&utm_medium=sponsorship&utm_campaign=nextjs-boilerplate"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://nextjs-boilerplate.com/pro-saas-starter-kit">
             <Image
-              src="/assets/images/clerk-logo-dark.png"
-              alt="Clerk – Authentication & User Management for Next.js"
+              src="/assets/images/nextjs-boilerplate-saas.png"
+              alt="Next.js SaaS Boilerplate"
               width={260}
               height={224}
             />
@@ -46,10 +42,10 @@ export const Sponsors = () => (
       </tr>
       <tr className="h-56">
         <td className="border-2 border-gray-300 p-3">
-          <a href="https://launch.arcjet.com/Q6eLbRE">
+          <a href="https://nextjs-boilerplate.com/pro-saas-starter-kit">
             <Image
-              src="/assets/images/arcjet-light.svg"
-              alt="Arcjet"
+              src="/assets/images/nextjs-boilerplate-saas.png"
+              alt="Next.js SaaS Boilerplate"
               width={260}
               height={224}
             />
@@ -92,14 +88,10 @@ export const Sponsors = () => (
           </a>
         </td>
         <td className="border-2 border-gray-300 p-3">
-          <a
-            href="https://posthog.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://nextjs-boilerplate.com/pro-saas-starter-kit">
             <Image
-              src="https://posthog.com/brand/posthog-logo.svg"
-              alt="PostHog"
+              src="/assets/images/nextjs-boilerplate-saas.png"
+              alt="Next.js SaaS Boilerplate"
               width={260}
               height={224}
             />
@@ -122,14 +114,10 @@ export const Sponsors = () => (
       </tr>
       <tr className="h-56">
         <td className="border-2 border-gray-300 p-3">
-          <a
-            href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://nextjs-boilerplate.com/pro-saas-starter-kit">
             <Image
-              src="/assets/images/better-stack-dark.png"
-              alt="Better Stack"
+              src="/assets/images/nextjs-boilerplate-saas.png"
+              alt="Next.js SaaS Boilerplate"
               width={260}
               height={224}
             />

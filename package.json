@@ -32,19 +32,14 @@
     "test:lighthouse": "run-p start lighthouse --race"
   },
   "dependencies": {
-    "@arcjet/next": "^1.0.0-beta.8",
-    "@clerk/localizations": "^3.18.1",
-    "@clerk/nextjs": "^6.25.0",
     "@electric-sql/pglite": "^0.3.4",
     "@hookform/resolvers": "^5.1.1",
     "@logtape/logtape": "^1.0.4",
-    "@sentry/nextjs": "^9.38.0",
     "@t3-oss/env-nextjs": "^0.13.8",
     "drizzle-orm": "^0.44.3",
     "next": "^15.4.1",
     "next-intl": "^4.3.4",
     "pg": "^8.16.3",
-    "posthog-js": "^1.257.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-hook-form": "^7.60.0",
@@ -75,7 +70,6 @@
     "@vitejs/plugin-react": "^4.6.0",
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",
-    "checkly": "^6.1.1",
     "conventional-changelog-conventionalcommits": "^9.1.0",
     "cross-env": "^7.0.3",
     "dotenv-cli": "^8.0.0",
@@ -119,9 +113,7 @@
     ]
   },
   "trustedDependencies": [
-    "@clerk/shared",
     "@parcel/watcher",
-    "@sentry/cli",
     "@tailwindcss/oxide",
     "core-js",
     "oxc-resolver"

@@ -69,11 +69,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Framework**: Next.js 15+ with App Router and React 19
 - **Styling**: Tailwind CSS 4
 - **Database**: DrizzleORM with PostgreSQL (PGlite for local development)
-- **Authentication**: Clerk with multi-factor auth, social logins, passwordless
-- **Internationalization**: next-intl with Crowdin integration
+- **Internationalization**: next-intl (manual translations)
 - **Testing**: Vitest (unit), Playwright (E2E), Storybook
-- **Security**: Arcjet (bot protection, rate limiting, WAF)
-- **Monitoring**: Sentry, PostHog analytics, Better Stack logging
+- **Monitoring**: LogTape logging
 - **Type Safety**: TypeScript, Zod validation, T3 Env
 
 ### Project Structure
@@ -98,7 +96,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `vitest.config.mts` - Test configuration with colocation support for scripts/
 - `src/libs/env.ts` - Type-safe environment variables with T3 Env and Zod
 - `src/libs/i18n.ts` - Internationalization setup with next-intl
-- `src/libs/arcjet.ts` - Security configuration (bot detection, WAF)
 
 ### Database Schema Management
 - Schema defined in `src/models/schema.ts` using Drizzle ORM
@@ -107,17 +104,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Local development uses PGlite (no external database required)
 - Production typically uses PostgreSQL (configured via DATABASE_URL)
 
-### Authentication & Environment
-- Uses Clerk for authentication (requires CLERK_SECRET_KEY and NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY)
+### Environment & Services
 - Environment variables are type-safe via `src/libs/env.ts`
 - Local development works out-of-the-box with PGlite database
-- Optional services: Sentry (error monitoring), PostHog (analytics), Arcjet (security)
+- Logging: LogTape for structured logging
+- Authentication: Mock/placeholder pages for sign-in, sign-up, dashboard, and user profile
 
 ### Routing & i18n
 - App Router with `[locale]` dynamic segment for internationalization
 - Supported locales configured in `src/libs/i18n-routing.ts`
-- Translation files in `src/locales/` directory
-- Crowdin integration for automated translations
+- Translation files in `src/locales/` directory (manual translations)
 
 ### Key Development Patterns
 - **File Naming Convention**: All files use kebab-case naming (e.g., `counter-form.tsx`, `post-hog-provider.tsx`)
@@ -127,7 +123,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Validation schemas in `src/validations/` using Zod
 - Environment variables strictly typed and validated
 - Database migrations generated from schema changes, not manual SQL
-- Error monitoring with Sentry Spotlight in development
 - Form handling with React Hook Form + Zod validation
 
 ### Testing Strategy

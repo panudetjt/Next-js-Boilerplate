@@ -3,7 +3,6 @@ import type { KnipConfig } from 'knip';
 const config: KnipConfig = {
   // Files to exclude from Knip analysis
   ignore: [
-    'checkly.config.ts',
     'unlighthouse.config.ts',
     'src/libs/i18n.ts',
     'src/types/i18n.ts',
