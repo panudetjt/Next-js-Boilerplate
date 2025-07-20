@@ -1,10 +1,11 @@
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type ISignInPageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata(props: ISignInPageProps) {
+export async function generateMetadata(props: ISignInPageProps): Promise<Metadata> {
   const { locale } = await props.params;
   const t = await getTranslations({
     locale,

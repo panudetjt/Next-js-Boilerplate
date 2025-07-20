@@ -28,40 +28,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Essential Commands
 
 ### Development
-- `npm run dev` - Start development server with database and Next.js (uses turbopack and PGlite local database)
-- `npm run dev:next` - Start Next.js dev server only with turbopack
-- `npm run dev:spotlight` - Start Sentry Spotlight for local error monitoring
+- `pnpm run dev` - Start development server with database and Next.js (uses turbopack and PGlite local database)
+- `pnpm run dev:next` - Start Next.js dev server only with turbopack
+- `pnpm run dev:spotlight` - Start Sentry Spotlight for local error monitoring
 
 ### Building and Production
-- `npm run build` - Production build with memory database (runs in parallel)
-- `npm run build:next` - Build Next.js only
-- `npm run start` - Start production server
-- `npm run build-stats` - Build with bundle analyzer
+- `pnpm run build` - Production build with memory database (runs in parallel)
+- `pnpm run build:next` - Build Next.js only
+- `pnpm run start` - Start production server
+- `pnpm run build-stats` - Build with bundle analyzer
 
 ### Testing
-- `npm run test` - Run unit tests with Vitest
-- `npm run test:e2e` - Run Playwright E2E tests
-- `npm run storybook:test` - Run Storybook tests in headless mode
+- `pnpm run test` - Run unit tests with Vitest
+- `pnpm run test:e2e` - Run Playwright E2E tests
+- `pnpm run storybook:test` - Run Storybook tests in headless mode
 - `npx playwright install` - Install Playwright browsers (first time setup)
 
 ### Code Quality
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Auto-fix ESLint issues
-- `npm run check:types` - TypeScript type checking
-- `npm run check:deps` - Check for unused dependencies with Knip
-- `npm run check:i18n` - Validate i18n translations
+- `pnpm run lint` - Run ESLint
+- `pnpm run lint:fix` - Auto-fix ESLint issues
+- `pnpm run check:types` - TypeScript type checking
+- `pnpm run check:deps` - Check for unused dependencies with Knip
+- `pnpm run check:i18n` - Validate i18n translations
 
 ### Database
-- `npm run db:generate` - Generate Drizzle migration from schema changes
-- `npm run db:studio` - Open Drizzle Studio at https://local.drizzle.studio
-- `npm run db-server:file` - Start PGlite server with file persistence
-- `npm run db-server:memory` - Start PGlite server in memory
+- `pnpm run db:generate` - Generate Drizzle migration from schema changes
+- `pnpm run db:studio` - Open Drizzle Studio at https://local.drizzle.studio
+- `pnpm run db-server:file` - Start PGlite server with file persistence
+- `pnpm run db-server:memory` - Start PGlite server in memory
 
 ### Development Tools
-- `npm run storybook` - Start Storybook on port 6006
-- `npm run commit` - Interactive commit with Commitizen
-- `npm run lighthouse` - Run Lighthouse audit
-- `npm run test:lighthouse` - Run app and Lighthouse together
+- `pnpm run storybook` - Start Storybook on port 6006
+- `pnpm run commit` - Interactive commit with Commitizen
+- `pnpm run lighthouse` - Run Lighthouse audit
+- `pnpm run test:lighthouse` - Run app and Lighthouse together
 
 ## Architecture Overview
 
@@ -99,7 +99,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Database Schema Management
 - Schema defined in `src/models/schema.ts` using Drizzle ORM
-- After schema changes, run `npm run db:generate` to create migrations
+- After schema changes, run `pnpm run db:generate` to create migrations
 - Migrations are auto-applied on next database interaction
 - Local development uses PGlite (no external database required)
 - Production typically uses PostgreSQL (configured via DATABASE_URL)
@@ -131,7 +131,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **TDD Support**: Framework supports test-driven development workflow
 - **Script Testing**: Custom scripts in `scripts/` directory have co-located tests
 - **Code Coverage**: Target 95%+ coverage for custom scripts and utilities
-- **Coverage Commands**: `npm run test -- --coverage` for coverage reports
+- **Coverage Commands**: `pnpm run test -- --coverage` for coverage reports
 - **Integration tests**: Playwright (`.spec.ts` files)
 - **E2E tests**: Playwright (`.e2e.ts` files)
 - **Component testing**: Storybook with accessibility testing

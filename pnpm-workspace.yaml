@@ -1,0 +1,10 @@
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - lefthook
+  - oxc-resolver
+  - puppeteer
+  - sharp
+  - vue-demi
+  - workerd

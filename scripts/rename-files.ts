@@ -214,9 +214,9 @@ export async function renameAllFiles(dryRun = false): Promise<RenameMapping[]> {
   console.log(`- Renamed ${renameMapping.length} files`);
   console.log('- Updated import statements in all project files');
   console.log('\\n🔧 Next steps:');
-  console.log('- Run npm run check:types to verify no broken references');
-  console.log('- Run npm run lint to check code style');
-  console.log('- Run npm run test to ensure tests still pass');
+  console.log('- Run pnpm run check:types to verify no broken references');
+  console.log('- Run pnpm run lint to check code style');
+  console.log('- Run pnpm run test to ensure tests still pass');
 
   return renameMapping;
 }

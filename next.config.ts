@@ -1,12 +1,16 @@
 import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
+// added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
 import createNextIntlPlugin from 'next-intl/plugin';
+
 import './src/libs/env';
 
 // Define the base Next.js configuration
 const baseConfig: NextConfig = {
   eslint: {
     dirs: ['.'],
+    ignoreDuringBuilds: true,
   },
   poweredByHeader: false,
   reactStrictMode: true,
@@ -22,3 +26,4 @@ if (process.env.ANALYZE === 'true') {
 
 const nextConfig = configWithPlugins;
 export default nextConfig;
+initOpenNextCloudflareForDev();

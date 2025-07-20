@@ -11,7 +11,7 @@
     "build:next": "next build",
     "build": "run-p db-server:memory build:* --race",
     "start": "next start",
-    "build-stats": "cross-env ANALYZE=true npm run build",
+    "build-stats": "cross-env ANALYZE=true pnpm run build",
     "clean": "rimraf .next out coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -29,7 +29,10 @@
     "storybook:test": "vitest run --config .storybook/vitest.config.mts",
     "build-storybook": "storybook build",
     "lighthouse": "unlighthouse-ci --site localhost:3000",
-    "test:lighthouse": "run-p start lighthouse --race"
+    "test:lighthouse": "run-p start lighthouse --race",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.4",
@@ -37,7 +40,7 @@
     "@logtape/logtape": "^1.0.4",
     "@t3-oss/env-nextjs": "^0.13.8",
     "drizzle-orm": "^0.44.3",
-    "next": "^15.4.1",
+    "next": "15.3.5",
     "next-intl": "^4.3.4",
     "pg": "^8.16.3",
     "react": "19.1.0",
@@ -51,12 +54,14 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/prompt-cli": "^19.8.1",
+    "@commitlint/types": "^19.8.1",
     "@electric-sql/pglite-socket": "^0.0.9",
     "@eslint-react/eslint-plugin": "^1.52.3",
     "@faker-js/faker": "^9.9.0",
     "@lingual/i18n-check": "^0.8.4",
     "@next/bundle-analyzer": "^15.4.1",
     "@next/eslint-plugin-next": "^15.4.1",
+    "@opennextjs/cloudflare": "^1.5.1",
     "@playwright/test": "^1.54.1",
     "@spotlightjs/spotlight": "^3.0.1",
     "@storybook/addon-a11y": "^9.0.16",
@@ -82,6 +87,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-storybook": "^9.0.16",
+    "glob": "^11.0.3",
     "knip": "^5.61.3",
     "lefthook": "^1.12.2",
     "npm-run-all": "^4.1.5",
@@ -93,6 +99,7 @@
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "unlighthouse": "^0.17.1",
+    "vite": "^7.0.5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4",
     "vitest-browser-react": "^1.0.0"
@@ -111,11 +118,5 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
     ]
-  },
-  "trustedDependencies": [
-    "@parcel/watcher",
-    "@tailwindcss/oxide",
-    "core-js",
-    "oxc-resolver"
-  ]
+  }
 }
