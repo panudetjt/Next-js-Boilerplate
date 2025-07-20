@@ -5,8 +5,8 @@ const config: KnipConfig = {
   ignore: [
     'checkly.config.ts',
     'unlighthouse.config.ts',
-    'src/libs/I18n.ts',
-    'src/types/I18n.ts',
+    'src/libs/i18n.ts',
+    'src/types/i18n.ts',
     'tests/**/*.ts',
   ],
   // Dependencies to ignore during analysis
@@ -15,6 +15,7 @@ const config: KnipConfig = {
     '@clerk/types',
     'conventional-changelog-conventionalcommits',
     'vite',
+    'glob',
   ],
   // Binaries to ignore during analysis
   ignoreBinaries: [

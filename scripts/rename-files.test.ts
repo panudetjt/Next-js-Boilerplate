@@ -1,3 +1,4 @@
+import type { RenameMapping } from './rename-files';
 import * as fs from 'node:fs';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
@@ -5,6 +6,7 @@ import {
   findPascalCaseFiles,
   pascalToKebabCase,
   renameAllFiles,
+
   updateImportStatements,
 } from './rename-files';
 
@@ -156,7 +158,7 @@ describe('File Renaming Utilities', () => {
           oldName: 'Counter.e2e.ts',
           newName: 'counter.e2e.ts',
         },
-      ];
+      ] satisfies RenameMapping[];
 
       // Act
       const result = createRenameMapping(pascalFiles);
